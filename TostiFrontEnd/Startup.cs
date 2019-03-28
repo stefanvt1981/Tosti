@@ -32,6 +32,7 @@ namespace TostiFrontEnd
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddScoped<ITostiBackEndClient, TostiBackEndClient>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
