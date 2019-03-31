@@ -22,7 +22,11 @@ namespace TostiFrontEnd.Controllers
         public ActionResult Index()
         {
             try
-            {  
+            {
+                Console.WriteLine($"Used url: {_client.GetBackendUrl()}");
+
+                var tostis = _client.GetAllTostis();
+
                 return View(_client.GetAllTostis());
             }
             catch(Exception ex)
