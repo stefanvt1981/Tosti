@@ -21,8 +21,6 @@ namespace TostiFrontEnd.Components.TostiBackEndClient
             _client = new RestClient(_options.TostiBackEnd_URL);
         }
 
-        public string GetBackendUrl() => _options.TostiBackEnd_URL;
-
         public List<Tosti> GetAllTostis()
         {
             var request = new RestRequest("tosti", Method.GET);

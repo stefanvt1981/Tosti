@@ -9,6 +9,5 @@ namespace TostiFrontEnd.Components.TostiBackEndClient
         Tosti GetTosti(int id);
         bool UpsertTosti(Tosti tosti);
         bool DeleteTosti(Tosti tosti);
-        string GetBackendUrl();
     }
 }
