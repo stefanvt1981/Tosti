@@ -6,6 +6,7 @@ EXPOSE 443
 FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /src
 COPY ["TostiFrontEnd/TostiFrontEnd.csproj", "TostiFrontEnd/"]
+COPY ["TostiBusinessEntities/TostiBusinessEntities.csproj", "TostiBusinessEntities/"]
 RUN dotnet restore "TostiFrontEnd/TostiFrontEnd.csproj"
 COPY . .
 WORKDIR "/src/TostiFrontEnd"
@@ -17,5 +18,4 @@ RUN dotnet publish "TostiFrontEnd.csproj" -c Release -o /app
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
-ENV TostiBackEnd_URL="https://localhost:5050/api"
 ENTRYPOINT ["dotnet", "TostiFrontEnd.dll"]

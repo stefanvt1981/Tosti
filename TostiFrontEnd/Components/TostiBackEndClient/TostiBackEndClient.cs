@@ -9,7 +9,7 @@ using TostiBusinessEntities;
 namespace TostiFrontEnd.Components.TostiBackEndClient
 {
     
-    public class TostiBackEndClient
+    public class TostiBackEndClient : ITostiBackEndClient
     {
 
         private readonly RestClient _client;
@@ -21,6 +21,8 @@ namespace TostiFrontEnd.Components.TostiBackEndClient
             _client = new RestClient(_options.TostiBackEnd_URL);
         }
 
+        public string GetBackendUrl() => _options.TostiBackEnd_URL;
+
         public List<Tosti> GetAllTostis()
         {
             var request = new RestRequest("tosti", Method.GET);
@@ -28,7 +30,46 @@ namespace TostiFrontEnd.Components.TostiBackEndClient
 
             var response = _client.Execute<List<Tosti>>(request);
 
+            return response.Data ?? new List<Tosti>();
+        }
+
+        public Tosti GetTosti(int id)
+        {
+            var request = new RestRequest("tosti/{id}", Method.GET);
+            request.AddHeader("content-type", @"application/json");
+            request.AddUrlSegment("id", id);
+
+            var response = _client.Execute<Tosti>(request);
+
             return response.Data;
         }
+
+        public bool UpsertTosti(Tosti tosti)
+        {
+            var request = CreateRequest(tosti, Method.POST);
+
+            var response = _client.Execute(request);
+
+            return response.IsSuccessful;
+        }
+
+        public bool DeleteTosti(Tosti tosti)
+        {
+            var request = CreateRequest(tosti, Method.DELETE);
+
+            var response = _client.Execute<Tosti>(request);
+
+            return response.IsSuccessful;
+        }
+
+        private static RestRequest CreateRequest(Tosti tosti, Method method)
+        {
+            var request = new RestRequest("tosti", method);
+            request.AddHeader("content-type", @"application/json"); 
+                request.AddJsonBody(tosti);
+            return request;
+        }
+
+
     }
 }

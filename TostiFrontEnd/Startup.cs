@@ -32,10 +32,12 @@ namespace TostiFrontEnd
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
             services.Configure<TostiBackEndClientOptions>(Configuration);
+
+            services.AddScoped<ITostiBackEndClient, TostiBackEndClient>();
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);           
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

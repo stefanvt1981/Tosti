@@ -73,7 +73,7 @@ namespace TostiBackEnd.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult> Post([FromBody] Tosti tosti)
+        public async Task<ActionResult> Post(int id, [FromBody] Tosti tosti)
         {
             if(ModelState.IsValid)
             {
@@ -98,7 +98,7 @@ namespace TostiBackEnd.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult> Put([FromBody] Tosti tosti)
+        public async Task<ActionResult> Put(int id, [FromBody] Tosti tosti)
         {
             if (ModelState.IsValid)
             {
@@ -123,7 +123,7 @@ namespace TostiBackEnd.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult> Delete([FromBody] Tosti tosti)
+        public async Task<ActionResult> Delete(int id, [FromBody] Tosti tosti)
         {
             if (ModelState.IsValid)
             {

@@ -5,6 +5,11 @@ namespace TostiBusinessEntities
 {
     public class Tosti
     {
+        public Tosti()
+        {
+
+        }
+
         public Tosti(int id, string naam, string brood, string vulling, int calorieen)
         {
             Id = id;
@@ -13,7 +18,7 @@ namespace TostiBusinessEntities
             Vulling = vulling;
             Calorieen = calorieen;
         }
-
+        
         public int Id { get; set; }
 
         [Required]

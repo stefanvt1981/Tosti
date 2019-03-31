@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>ab4aa322-4a3e-4189-ada6-179511acac4a</ProjectGuid>
+    <ProjectGuid>2e5a2200-c438-4843-88f7-0eccac921257</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/api/values</DockerServiceUrl>
     <DockerServiceName>tostibackend</DockerServiceName>

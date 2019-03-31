@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{BCF620BE-F5D
 		SQL\CreateUser.sql = SQL\CreateUser.sql
 	EndProjectSection
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{AB4AA322-4A3E-4189-ADA6-179511ACAC4A}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{2E5A2200-C438-4843-88F7-0ECCAC921257}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
