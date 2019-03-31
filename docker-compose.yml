@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  tostibackend:
+    image: ${DOCKER_REGISTRY-}tostibackend
+    build:
+      context: .
+      dockerfile: TostiBackEnd/Dockerfile
+
+  tostifrontend:
+    image: ${DOCKER_REGISTRY-}tostifrontend
+    build:
+      context: .
+      dockerfile: TostiFrontEnd/Dockerfile
+
